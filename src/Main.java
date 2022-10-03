@@ -15,14 +15,12 @@ public class Main {
     } // скобка метода main
 
     public static String makeList3to7 (int[] arr) {
-        int i = 0;
-        int[] oddArr = new int [arr.length];
-
-        for (int element : arr) {
-            if (element % 2 != 0) {
-                oddArr[i] = element;
-            } else { oddArr[i] = element + 1; }
-            i++;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 != 0) {
+                continue;
+            } else {
+                arr[i] = arr[i] + 1;
+            }
         }
 /*      *********************************************************************************************************
         String s = Arrays.toString (oddArr);
@@ -33,14 +31,13 @@ public class Main {
         Результат :  ", 1, 3"
         *********************************************************************************************************
 */
-        i = 0;
+        int k = 0;
         int[] arr3to7 = new int[5];
         for (int j = 2; j < 7; j++) {
-            arr3to7[i] = oddArr[j];
-            i++;
+            arr3to7[k] = arr[j];
+            k++;
         }
         return Arrays.toString (arr3to7);
-
     }
 
 } // скобка class Main
